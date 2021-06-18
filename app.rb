@@ -2,7 +2,7 @@ require 'bundler'
 
 Bundler.require
 
-post '/event' do
+post "/event/#{ENV['SECRET']}" do
   payload = JSON.parse(request.body.string)
 
   namespace = payload.dig('namespace')
